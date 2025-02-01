@@ -1,4 +1,4 @@
-package model;
+package ca.sheridancollege.leenalahmad.assignment.model;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
