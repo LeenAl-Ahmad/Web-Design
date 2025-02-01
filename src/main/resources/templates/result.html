@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Game Result</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<h1>Game Result</h1>
+<p>You won: [[${selectedPrize}]]</p>
+<h2>All Boxes:</h2>
+<ul>
+    <li th:each="box, iterStat : ${allPrizes}">
+        Box [[${iterStat.index + 1}]]: [[${box}]]
+    </li>
+</ul>
+<footer>Your Name</footer>
+</body>
+</html>

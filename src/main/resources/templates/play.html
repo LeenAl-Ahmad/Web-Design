@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Play Game</title>
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<h1>Choose a Box</h1>
+<form action="/result" method="post">
+  <div class="box-container">
+    <div th:each="box, iterStat : ${boxes}" class="box">
+      <input type="radio" name="selectedBox" th:value="${iterStat.index}" th:id="'box' + ${iterStat.index}">
+      <label th:for="'box' + ${iterStat.index}" class="box-label">Box [[${iterStat.index + 1}]]</label>
+    </div>
+  </div>
+  <button type="submit">Play</button>
+</form>
+<footer>Leen Al-Ahmad</footer>
+</body>
+</html>
