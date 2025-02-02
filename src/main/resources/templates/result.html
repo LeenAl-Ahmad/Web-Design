@@ -6,13 +6,15 @@
 </head>
 <body>
 <h1>Game Result</h1>
-<p>You won: [[${selectedPrize}]]</p>
+<p>You selected Box [[${selectedPrize}]].</p>
+
 <h2>All Boxes:</h2>
-<ul>
-    <li th:each="box, iterStat : ${allPrizes}">
-        Box [[${iterStat.index + 1}]]: [[${box}]]
-    </li>
-</ul>
-<footer>Your Name</footer>
+<div>
+    <div th:each="box, iterStat : ${allPrizes}">
+        <p>Box [[${iterStat.index + 1}]]: [[${box}]]</p>
+    </div>
+</div>
+
+<footer>Leen Al-Ahmad</footer>
 </body>
 </html>
