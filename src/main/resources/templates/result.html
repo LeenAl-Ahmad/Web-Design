@@ -6,7 +6,8 @@
 </head>
 <body>
 <h1>Game Result</h1>
-<p>You selected Box [[${selectedPrize}]].</p>
+<p>You selected Box [[${selectedPrize.getDescription()}]].</p>
+<img height="200px" th:src="@{'/img/' + ${selectedPrize.getImgPath()}}" />
 
 <h2>All Boxes:</h2>
 <div>

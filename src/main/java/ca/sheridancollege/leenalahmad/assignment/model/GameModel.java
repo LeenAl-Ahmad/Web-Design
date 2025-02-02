@@ -5,5 +5,5 @@ import java.util.List;
 public interface GameModel {
     void initializeBoxes();
     List<String> getAllPrizes();
-    String getPrize(int index);
+    Prize getPrize(int index);
 }

@@ -30,7 +30,7 @@ public class GameController implements GameModel {
 
     @PostMapping("/result")
     public String result(@RequestParam int selectedBox, Model model) {
-        String selectedPrize = getPrize(selectedBox);  // Get the prize for the selected box
+        Prize selectedPrize = getPrize(selectedBox);  // Get the prize for the selected box
         model.addAttribute("selectedPrize", selectedPrize);  // Pass the selected prize to the result page
         model.addAttribute("allPrizes", getAllPrizes());  // Pass all prize descriptions
         return "result";  // Return the result.html page
@@ -54,8 +54,8 @@ public class GameController implements GameModel {
     }
 
     @Override
-    public String getPrize(int index) {
-        return boxes.get(index).getPrize().getDescription();  // Get the prize of the selected box
+    public Prize getPrize(int index) {
+        return boxes.get(index).getPrize();  // Get the prize of the selected box
     }
 
     // Helper method to create a box with a random prize
@@ -68,8 +68,15 @@ public class GameController implements GameModel {
 
     // Helper method to return a random prize
     private Prize randomPrize() {
-        String[] prizes = {"Candy", "iPhone", "100$", "TV", "PS5", "Trip to Hawaii"};
+        PrizeImpl[] prizes = {
+            new PrizeImpl("Candy", "candy.png"),
+            new PrizeImpl("Iphone", "iphone.png"),
+            new PrizeImpl("$100", "100.png"),
+            new PrizeImpl("PS5", "ps5.png"),
+            new PrizeImpl("Empty", "empty.png"),
+        };
+
         int index = random.nextInt(prizes.length);  // Pick a random prize
-        return new PrizeImpl(prizes[index]);  // Return a prize with the chosen description
+        return prizes[index];  // Return a prize with the chosen description
     }
 }
