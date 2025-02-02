@@ -59,7 +59,7 @@ public class GameController implements GameModel {
     }
 
     // Helper method to create a box with a random prize
-    private Box createBoxWithPrize() {
+    public Box createBoxWithPrize() {
         Box box = new GameBox();  // Create a new box
         Prize prize = randomPrize();  // Assign a random prize
         box.setPrize(prize);  // Set the prize for the box
@@ -67,7 +67,7 @@ public class GameController implements GameModel {
     }
 
     // Helper method to return a random prize
-    private Prize randomPrize() {
+    public Prize randomPrize() {
         PrizeImpl[] prizes = {
             new PrizeImpl("Candy", "candy.png"),
             new PrizeImpl("Iphone", "iphone.png"),
